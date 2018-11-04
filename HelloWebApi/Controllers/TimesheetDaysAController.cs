@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using HelloWebApi.Helpers;
+using HelloWebApi.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -34,6 +35,13 @@ namespace HelloWebApi.Controllers
 
             //return new string[] { "value1", "value2" };
 
+        }
+
+        [Route("Ef")]
+        public IEnumerable<TimesheetDays> GetEf()
+        {
+            var db = new EfContext();
+            return db.TimesheetDays.Take(20);
         }
 
         // GET: api/TimesheetDaysA/5

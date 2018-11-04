@@ -31,3 +31,7 @@ TODO
 * Create a database
 * Populate it with Build01.sql
 * alter local.settings.json to suit your database name
+
+Use Entity Framework
+* Add EF Core
+* Scaffold-DbContext "Server=localhost;Database=HelloWebApi;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context EfContext

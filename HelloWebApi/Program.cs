@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using HelloWebApi.Helpers;
+using HelloWebApi.Models;
 using HelloWebApi.Services;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
@@ -19,6 +21,7 @@ namespace HelloWebApi
                 .AddJsonFile("local.settings.json")
                 .Build();
             LogService.FileLogPath = config["FileLogPath"];
+            EfContext.EfConnectionString = config.GetConnectionString("Ef");
             CreateWebHostBuilder(args)
                 .UseConfiguration(config)
                 .Build().Run();
