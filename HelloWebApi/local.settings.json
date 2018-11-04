@@ -1,0 +1,6 @@
+{
+  "connectionStrings": {
+    "Db": "Data Source=localhost;Initial Catalog=HelloWebApi;Integrated Security=True;MultipleActiveResultSets=true;"
+  },
+  "FileLogPath": "."
+}
