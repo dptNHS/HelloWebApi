@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+Hello this is the home page of my app NAD AND ITIS GREAT
+
+<div id="thedata">
+
+</div>
+
+<button onclick="getthedata()">Get the data</button>
+
+<script>
+    function getthedata() {
+        document.getElementById("thedata").innerHTML = "heres your data";
+        var data = null;
+
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                console.log(this.responseText);
+                document.getElementById("thedata").innerHTML = this.responseText;
+            }
+        });
+
+        xhr.open("GET", "/api/TimesheetDaysA/Ef/5");
+        xhr.setRequestHeader("Cache-Control", "no-cache");
+        xhr.setRequestHeader("Authorization", "Bearer User123");
+
+        xhr.send(data);
+    }
+</script>
+

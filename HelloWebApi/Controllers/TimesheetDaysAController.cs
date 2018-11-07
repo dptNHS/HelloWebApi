@@ -37,11 +37,13 @@ namespace HelloWebApi.Controllers
 
         }
 
-        [Route("Ef")]
-        public IEnumerable<TimesheetDays> GetEf()
+        [Route("Ef/{page}")]
+        public IEnumerable<TimesheetDays> GetEf(int page)
         {
             var db = new EfContext();
-            return db.TimesheetDays.Take(20);
+            return db.TimesheetDays
+                .Skip(20 * page)
+                .Take(20);
         }
 
         // GET: api/TimesheetDaysA/5
