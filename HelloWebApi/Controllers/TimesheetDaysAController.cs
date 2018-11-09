@@ -38,7 +38,7 @@ namespace HelloWebApi.Controllers
         }
 
         [Route("Ef/{page}")]
-        public IEnumerable<TimesheetDays> GetEf(int page)
+        public IEnumerable<TimesheetDays> GetEf(int page, string name = null)
         {
             var db = new EfContext();
             return db.TimesheetDays

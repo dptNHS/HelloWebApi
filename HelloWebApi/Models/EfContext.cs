@@ -15,7 +15,7 @@ namespace HelloWebApi.Models
         {
         }
 
-        public static string EfConnectionString { get; internal set; }
+        public static string EfConnectionString { get; set; }
         public virtual DbSet<TimesheetDays> TimesheetDays { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
